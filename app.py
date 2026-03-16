@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_option_menu import option_menu
 from auth.login import login_page
 from auth.signup import signup_page
 from dashboards.patient_dashboard import patient_dashboard
@@ -30,15 +29,3 @@ if st.session_state.page == "login":
     login_page()
 elif st.session_state.page == "signup":
     signup_page()
-
-#---------DEMO--------------
-st.title("MongoDB + Streamlit Demo")
-
-name = st.text_input("Enter Name")
-
-if st.button("Save"):
-    collection.insert_one({"name" : name})
-
-if st.button("View Data"):
-    data = list(collection.find({}, {"_id" : 0}))
-    st.write(data)

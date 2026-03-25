@@ -14,10 +14,6 @@ from auth.signup import signup_page
 from dashboards.patient_dashboard import patient_dashboard
 from dashboards.doctor_dashboard import doctor_dashboard
 from dashboards.admin_dashboard import admin_dashboard
-from db import get_db
-
-# DB init
-db = get_db()
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(page_title="MediCare", layout="wide")

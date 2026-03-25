@@ -1,6 +1,6 @@
 import streamlit as st
-from src.modules.Secure_Electronic_Health_Record.db import get_db
-from src.modules.Secure_Electronic_Health_Record.utils import log_audit
+from ..db import get_db
+from ..utils import log_audit
 
 def render_my_records():
     db = get_db()

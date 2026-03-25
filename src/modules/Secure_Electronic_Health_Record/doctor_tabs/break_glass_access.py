@@ -1,8 +1,8 @@
 import streamlit as st
 from datetime import datetime
 # Updated imports to match new project structure
-from src.modules.Secure_Electronic_Health_Record.db import get_db
-from src.modules.Secure_Electronic_Health_Record.utils import log_audit
+from ..db import get_db
+from ..utils import log_audit
 
 def render_break_glass_access():
     db = get_db()

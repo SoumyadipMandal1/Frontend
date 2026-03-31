@@ -13,7 +13,7 @@ from patient_tabs.my_records import render_my_records
 from patient_tabs.grant_access import render_grant_access
 from patient_tabs.my_audit_trail import render_my_audit_trail
 
-def show_module_g1():
+def show_module():
     db = get_db()
     role = st.session_state.get("role", "Doctor")
 

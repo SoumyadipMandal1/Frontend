@@ -1,5 +1,5 @@
 import streamlit as st
-from src.modules.secure_ehr.db import get_db
+from db import get_db
 
 def render_audit_trail():
     db = get_db()

@@ -1,5 +1,5 @@
 import streamlit as st
-from ..db import get_db
+from db import get_db
 
 def render_my_audit_trail():
     db = get_db()

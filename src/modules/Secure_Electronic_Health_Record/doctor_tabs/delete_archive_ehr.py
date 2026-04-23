@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
-from src.modules.secure_ehr.db import get_db
-from src.modules.secure_ehr.utils import log_audit, has_patient_granted_access
+from db import get_db
+from utils import log_audit, has_patient_granted_access
 
 def render_delete_archive_ehr():
     db = get_db()

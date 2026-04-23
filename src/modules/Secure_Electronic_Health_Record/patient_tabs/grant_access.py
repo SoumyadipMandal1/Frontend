@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
-from ..db import get_db
-from ..utils import log_audit
+from db import get_db
+from utils import log_audit
 
 def render_grant_access():
     db = get_db()

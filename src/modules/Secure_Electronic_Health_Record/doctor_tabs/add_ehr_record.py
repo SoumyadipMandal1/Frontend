@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
-from src.modules.secure_ehr.db import get_db
-from src.modules.secure_ehr.utils import log_audit, generate_ehr_id
+from db import get_db
+from utils import log_audit, generate_ehr_id
 
 def render_add_ehr_record():
     db = get_db()

@@ -2,6 +2,7 @@
 import streamlit as st
 from components.sidebar import sidebar
 from components.charts import patient_line_chart, appointment_donut_chart
+from module import show_module
 
 # All categories and their modules
 CATEGORIES = {
@@ -150,13 +151,14 @@ def patient_dashboard():
 
     # Handle sidebar selection
     if selected != "Dashboard" and selected in CATEGORIES:
-        st.session_state.selected_category = selected
-        st.session_state.view = "category"
-        st.session_state.selected_module = None
+     if st.session_state.view not in ["module"]:
+         st.session_state.selected_category = selected
+         st.session_state.view = "category"
+         st.session_state.selected_module = None
     elif selected == "Dashboard":
-        st.session_state.view = "main"
-        st.session_state.selected_category = None
-        st.session_state.selected_module = None
+     st.session_state.view = "main"
+     st.session_state.selected_category = None
+     st.session_state.selected_module = None
 
     # ROUTER
     if st.session_state.view == "category":
@@ -361,6 +363,9 @@ def show_module_detail():
     code, name, desc, tables, records = st.session_state.selected_module
     cat_key = st.session_state.selected_category
     
+    if code == "G1":
+        show_module()
+        return
     # Breadcrumb
     st.markdown(f"Category {cat_key.split('-')[0].strip()} > {name}")
     st.markdown(f"# {name}")
@@ -449,6 +454,3 @@ END;
     if st.button("⬅ Back to Modules"):
         st.session_state.view = "category"
         st.rerun()
-
-
-        

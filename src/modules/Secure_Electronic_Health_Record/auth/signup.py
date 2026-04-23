@@ -2,9 +2,8 @@ import streamlit as st
 from auth_service import signup_user
 from db import get_db
 
-db = get_db()
-
 def signup_page():
+    db = get_db()
     st.title("🏥 MediCare - Create Account")
 
     role     = st.selectbox("Signup as", ["Patient", "Doctor", "Admin"])
@@ -48,4 +47,3 @@ def signup_page():
     if st.button("Login"):
         st.session_state.page = "login"
         st.rerun()
-

@@ -2,11 +2,15 @@ import streamlit as st
 import os
 
 # Optional: only works locally, safe to keep
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except:
-    pass
+if "MONGO_URI" in st.secrets:
+    os.environ["MONGO_URI"] = st.secrets["MONGO_URI"]
+else:
+    try:
+        from dotenv import load_dotenv
+        from pathlib import Path
+        load_dotenv(Path(__file__).parent / ".env")
+    except:
+        pass
 
 # ✅ Correct imports (same folder level)
 from auth.login import login_page

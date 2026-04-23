@@ -4,3 +4,4 @@ matplotlib
 pymongo
 dnspython
 python-dotenv
+bcrypt

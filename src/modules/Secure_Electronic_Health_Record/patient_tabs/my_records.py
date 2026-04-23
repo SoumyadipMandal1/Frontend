@@ -1,6 +1,6 @@
 import streamlit as st
-from ..db import get_db
-from ..utils import log_audit
+from db import get_db
+from utils import log_audit
 
 def render_my_records():
     db = get_db()
